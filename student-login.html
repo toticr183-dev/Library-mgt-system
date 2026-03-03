@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - E-Library</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid rgba(255,215,0,0.2);
+        }
+        
+        .welcome-section {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .welcome-section h2 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .welcome-section p {
+            color: #1e3c72;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .feature-list {
+            margin-top: 2rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-item i {
+            color: #1e3c72;
+            font-size: 1.2rem;
+        }
+        
+        .login-section {
+            padding: 3rem;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .login-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #ffd700;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            border: none;
+            border-radius: 10px;
+            color: #1e3c72;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
+        }
+        
+        .forgot-password {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .forgot-password a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+        
+        .forgot-password a:hover {
+            color: #ffd700;
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="welcome-section">
+            <h2>Welcome Back!</h2>
+            <p>Access your digital library account to borrow, return, and manage books.</p>
+            
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Track borrowed books</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>View due dates</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Reserve popular books</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Borrowing history</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-section">
+            <h2>Student Login</h2>
+            
+            <form onsubmit="event.preventDefault(); alert('Demo: Login successful!'); window.location.href='student-dashboard.html';">
+                <div class="form-group">
+                    <label>Student ID</label>
+                    <input type="text" placeholder="e.g., STU001" value="STU001" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" value="password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">Login to Library</button>
+                
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
